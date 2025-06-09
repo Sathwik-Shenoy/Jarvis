@@ -1,0 +1,220 @@
+:root {
+    --primary-color: #00a8ff;
+    --secondary-color: #0097e6;
+    --background-color: #1e272e;
+    --text-color: #ffffff;
+    --accent-color: #0be881;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem;
+}
+
+.jarvis-interface {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.jarvis-circle {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.circle-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+.circle-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--primary-color);
+}
+
+.circle-rings {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.ring {
+    position: absolute;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    animation: rotate 4s linear infinite;
+}
+
+.ring1 {
+    width: 100%;
+    height: 100%;
+    animation-delay: 0s;
+}
+
+.ring2 {
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    animation-delay: -1s;
+}
+
+.ring3 {
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    animation-delay: -2s;
+}
+
+.jarvis-status {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.status-text {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    animation: blink 1s infinite;
+}
+
+.interaction-area {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+}
+
+.chat-container {
+    height: 400px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.input-area {
+    display: flex;
+    gap: 1rem;
+}
+
+#text-input {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    font-family: 'Orbitron', sans-serif;
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary-color);
+    color: var(--text-color);
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: var(--secondary-color);
+}
+
+.voice-btn {
+    width: 50px;
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Message styles */
+.message {
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+.user-message {
+    background: var(--primary-color);
+    margin-left: auto;
+}
+
+.jarvis-message {
+    background: rgba(255, 255, 255, 0.1);
+    margin-right: auto;
+} 

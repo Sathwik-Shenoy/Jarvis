@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARVIS - AI Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="jarvis-interface">
+            <div class="jarvis-circle">
+                <div class="circle-inner">
+                    <div class="circle-core"></div>
+                    <div class="circle-rings">
+                        <div class="ring ring1"></div>
+                        <div class="ring ring2"></div>
+                        <div class="ring ring3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="jarvis-status">
+                <div class="status-text">JARVIS Online</div>
+                <div class="status-indicator"></div>
+            </div>
+        </div>
+        
+        <div class="interaction-area">
+            <div class="chat-container">
+                <div id="chat-messages"></div>
+            </div>
+            <div class="input-area">
+                <button id="voice-btn" class="voice-btn">
+                    <span class="mic-icon">🎤</span>
+                </button>
+                <input type="text" id="text-input" placeholder="Type your message...">
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 
